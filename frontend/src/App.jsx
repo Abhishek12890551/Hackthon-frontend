@@ -1,19 +1,34 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import LandingPage from "./pages/LandingPage";
+import Dashboard from "./pages/Dashboard";
+import NewScan from "./pages/NewScan";
+import ScanProgress from "./pages/ScanProgress";
+import Reports from "./pages/Reports";
+import Patching from "./pages/Patching";
+import AIAssistant from "./pages/AIAssistant";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
-    <>
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold text-blue-600">Hello, World!</h1>
-        <p className="mt-4 text-gray-600">Welcome to my React app!</p>
-        <p className="mt-4 text-gray-600">hi this is the frontend team</p>
-        <p className="mt-4 text-gray-600">hello what's up</p>
+    <Router>
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900/20">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/app" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="new-scan" element={<NewScan />} />
+            <Route path="scan-progress/:scanId" element={<ScanProgress />} />
+            <Route path="reports" element={<Reports />} />
+            <Route path="patching" element={<Patching />} />
+            <Route path="ai-assistant" element={<AIAssistant />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
+        </Routes>
       </div>
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold text-blue-600">Hii</h1>
-        <p className="mt-4 text-gray-600">Welcome</p>
-      </div>
-    </>
+    </Router>
   );
 }
 
