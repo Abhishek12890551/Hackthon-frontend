@@ -15,13 +15,13 @@ const Sidebar = () => {
   const navigation = [
     { name: "Dashboard", href: "/app/dashboard", icon: HomeIcon },
     { name: "New Scan", href: "/app/new-scan", icon: MagnifyingGlassIcon },
-    { name: "Reports", href: "/app/reports", icon: DocumentTextIcon },
-    { name: "Patching", href: "/app/patching", icon: WrenchScrewdriverIcon },
-    {
-      name: "AI Assistant",
-      href: "/app/ai-assistant",
-      icon: ChatBubbleLeftRightIcon,
-    },
+    // { name: "Reports", href: "/app/reports", icon: DocumentTextIcon },
+    // { name: "Patching", href: "/app/patching", icon: WrenchScrewdriverIcon },
+    // {
+    //   name: "AI Assistant",
+    //   href: "/app/ai-assistant",
+    //   icon: ChatBubbleLeftRightIcon,
+    // },
     // { name: "Settings", href: "/app/settings", icon: Cog6ToothIcon },
   ];
 
