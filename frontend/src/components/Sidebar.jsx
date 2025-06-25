@@ -29,9 +29,10 @@ const Sidebar = () => {
     <div className="fixed inset-y-0 left-0 z-50 w-64 glass border-r border-purple-500/20">
       <div className="flex flex-col h-full">
         {" "}
-        {/* Logo */}
         <div className="px-6 py-8">
-          <Logo />
+          <NavLink to="/">
+            <Logo />
+          </NavLink>
         </div>
         {/* Navigation */}
         <nav className="flex-1 px-4 pb-4">
@@ -63,7 +64,6 @@ const Sidebar = () => {
             </div>
             <div>
               <p className="text-sm font-medium text-white">User</p>
-              <p className="text-xs text-gray-400">Security Admin</p>
             </div>
           </div>
         </div>

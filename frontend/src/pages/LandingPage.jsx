@@ -93,12 +93,14 @@ const LandingPage = () => {
         {" "}
         <nav className="flex justify-between items-center max-w-7xl mx-auto">
           {" "}
-          <Logo
-            className="group"
-            textSize="text-2xl"
-            textColor="text-white group-hover:text-purple-300 transition-colors duration-300"
-            showText={true}
-          />
+          <a href="#home">
+            <Logo
+              className="group"
+              textSize="text-2xl"
+              textColor="text-white group-hover:text-purple-300 transition-colors duration-300"
+              showText={true}
+            />
+          </a>
           <div className="hidden md:flex space-x-8">
             {[
               { name: "Home", href: "#home" },
