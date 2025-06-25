@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@heroicons/react": "^2.2.0",
-    "jspdf": "^3.0.1",
-    "react-router-dom": "^7.6.2",
-    "recharts": "^3.0.0"
-  }
-}

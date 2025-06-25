@@ -894,3 +894,23 @@ html {
 .animate-pulsing-glow {
   animation: pulsing-glow 2s ease-in-out infinite;
 }
+
+/* Print styles for reports */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .card {
+    border: 1px solid #333 !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .vulnerable-item {
+    border: 2px solid #dc3545 !important;
+    background: #f8d7da !important;
+    color: #721c24 !important;
+  }
+}
