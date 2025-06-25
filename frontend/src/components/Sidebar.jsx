@@ -22,7 +22,7 @@ const Sidebar = () => {
       href: "/app/ai-assistant",
       icon: ChatBubbleLeftRightIcon,
     },
-    { name: "Settings", href: "/app/settings", icon: Cog6ToothIcon },
+    // { name: "Settings", href: "/app/settings", icon: Cog6ToothIcon },
   ];
 
   return (

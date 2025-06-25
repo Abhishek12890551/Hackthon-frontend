@@ -3,20 +3,11 @@ import { Link } from "react-router-dom";
 import {
   MagnifyingGlassIcon,
   ShieldExclamationIcon,
-  WrenchScrewdriverIcon,
-  ChartBarIcon,
-  ClockIcon,
-  ExclamationTriangleIcon,
 } from "@heroicons/react/24/outline";
 import {
   PieChart,
   Pie,
   Cell,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
@@ -26,32 +17,17 @@ import Button from "../components/Button";
 const Dashboard = () => {
   const stats = [
     {
-      title: "Total Scans",
-      value: "1,247",
-      change: "+12%",
-      icon: MagnifyingGlassIcon,
-      color: "text-blue-400",
-    },
-    {
-      title: "Vulnerabilities Found",
-      value: "89",
-      change: "-23%",
-      icon: ShieldExclamationIcon,
+      title1: "Total Scans",
+      value1: "1,247",
+      change1: "+12%",
+      icon1: MagnifyingGlassIcon,
+
+      title2: "Vulnerabilities Found",
+      value2: "89",
+      change2: "-23%",
+      icon2: ShieldExclamationIcon,
+
       color: "text-red-400",
-    },
-    {
-      title: "Patches Applied",
-      value: "76",
-      change: "+8%",
-      icon: WrenchScrewdriverIcon,
-      color: "text-green-400",
-    },
-    {
-      title: "Risk Score",
-      value: "7.2/10",
-      change: "-0.5",
-      icon: ChartBarIcon,
-      color: "text-yellow-400",
     },
   ];
 
@@ -60,15 +36,6 @@ const Dashboard = () => {
     { name: "High", value: 23, color: "#f97316" },
     { name: "Medium", value: 34, color: "#eab308" },
     { name: "Low", value: 20, color: "#3b82f6" },
-  ];
-
-  const trendsData = [
-    { month: "Jan", vulnerabilities: 45, patches: 42 },
-    { month: "Feb", vulnerabilities: 52, patches: 48 },
-    { month: "Mar", vulnerabilities: 38, patches: 35 },
-    { month: "Apr", vulnerabilities: 41, patches: 39 },
-    { month: "May", vulnerabilities: 33, patches: 31 },
-    { month: "Jun", vulnerabilities: 29, patches: 28 },
   ];
 
   const recentScans = [
@@ -131,36 +98,49 @@ const Dashboard = () => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Stats + Chart */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        {/* Combined Card */}
         {stats.map((stat, index) => (
-          <Card key={index} className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">{stat.title}</p>
-                <p className="text-2xl font-bold text-white mt-1">
-                  {stat.value}
-                </p>
-                <p
-                  className={`text-sm mt-1 ${
-                    stat.change.startsWith("+")
-                      ? "text-green-400"
-                      : "text-red-400"
-                  }`}
-                >
-                  {stat.change} from last month
-                </p>
-              </div>
-              <div
-                className={`w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center ${stat.color}`}
-              >
-                <stat.icon className="w-6 h-6" />
-              </div>
+          <Card
+            key={index}
+            className="p-6 min-h-80 relative flex items-start "
+          >
+            <div
+              className={`absolute top-4 right-4 w-10 h-10 rounded-lg bg-purple-600/20 flex items-center justify-center ${stat.color}`}
+            >
+              <stat.icon1 className="w-6 h-6" />
             </div>
+<div className="space-y-16">
+  <div>
+    <p className="text-gray-400 text-lg">{stat.title1}</p>
+    <p className="text-4xl font-bold text-white mt-2">{stat.value1}</p>
+    <p
+      className={`text-base mt-2 ${
+        stat.change1.startsWith("+") ? "text-green-400" : "text-red-400"
+      }`}
+    >
+      {stat.change1} from last month
+    </p>
+  </div>
+
+  <div>
+    <p className="text-gray-400 text-lg">{stat.title2}</p>
+    <p className="text-4xl font-bold text-white mt-2">{stat.value2}</p>
+    <p
+      className={`text-base mt-2 ${
+        stat.change2.startsWith("+") ? "text-green-400" : "text-red-400"
+      }`}
+    >
+      {stat.change2} from last month
+    </p>
+  </div>
+</div>
+
+            
           </Card>
         ))}
-      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Severity Distribution */}
         <Card className="p-6">
           <h3 className="text-xl font-semibold text-white mb-6">
@@ -186,36 +166,9 @@ const Dashboard = () => {
             </ResponsiveContainer>
           </div>
         </Card>
-
-        <Card className="p-6">
-          <h3 className="text-xl font-semibold text-white mb-6">
-            Vulnerability Trends
-          </h3>
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={trendsData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                <XAxis dataKey="month" stroke="#9ca3af" />
-                <YAxis stroke="#9ca3af" />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "#1f2937",
-                    border: "1px solid #374151",
-                    borderRadius: "8px",
-                  }}
-                />
-                <Bar
-                  dataKey="vulnerabilities"
-                  fill="#8b5cf6"
-                  name="Vulnerabilities"
-                />
-                <Bar dataKey="patches" fill="#10b981" name="Patches Applied" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </Card>
       </div>
 
+      {/* Recent Scan History Table */}
       <Card className="p-6">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-semibold text-white">
