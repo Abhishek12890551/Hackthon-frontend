@@ -6,7 +6,7 @@ const Logo = ({
   showText = true,
   textSize = "text-xl",
   textColor = "text-white",
-  variant = "normal", // 'normal' or 'large'
+  variant = "normal",
   subtitle = "Security Scanner",
 }) => {
   const logoSrc =
@@ -19,7 +19,7 @@ const Logo = ({
       </div>
       {showText && (
         <div>
-          <h1 className={`${textSize} font-bold ${textColor}`}>InviScan AI</h1>
+          <h1 className={`${textSize} font-bold ${textColor}`}>InviScan</h1>
           <p className="text-xs text-purple-300">{subtitle}</p>
         </div>
       )}

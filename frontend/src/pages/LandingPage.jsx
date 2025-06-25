@@ -22,11 +22,11 @@ const LandingPage = () => {
     {
       icon: MagnifyingGlassIcon,
       title: "Smart Vulnerability Scanning",
-      description: "AI-powered detection with ZAP/Nikto integration",
+      description:
+        "Vulnerability detection with Selenium, BeautifulSoup, and more",
       gradient: "from-purple-500 to-pink-500",
-      stats: "99.9% Accuracy",
-      details:
-        "Advanced ML algorithms detect known & unknown threats with real-time scanning",
+      stats: "Scanner",
+      details: "Detect known & unknown threats with real-time scanning",
     },
     {
       icon: CpuChipIcon,
@@ -55,15 +55,15 @@ const LandingPage = () => {
       details:
         "Executive summaries, severity badges, and detailed fix suggestions",
     },
-    {
-      icon: ChatBubbleLeftRightIcon,
-      title: "AI Assistant",
-      description: "Security expert powered by advanced LLM",
-      gradient: "from-pink-500 to-red-500",
-      stats: "24/7 Support",
-      details:
-        "Get vulnerability explanations and prevention strategies instantly",
-    },
+    // {
+    //   icon: ChatBubbleLeftRightIcon,
+    //   title: "AI Assistant",
+    //   description: "Security expert powered by advanced LLM",
+    //   gradient: "from-pink-500 to-red-500",
+    //   stats: "24/7 Support",
+    //   details:
+    //     "Get vulnerability explanations and prevention strategies instantly",
+    // },
     {
       icon: ShieldCheckIcon,
       title: "Enterprise Ready",
@@ -80,14 +80,11 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900/20 relative overflow-x-hidden">
-      {/* Enhanced Background */}
       <div className="fixed inset-0">
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-purple-900/10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-purple-800/10"></div>
-        {/* Mesh gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/5 via-transparent to-pink-900/5 animate-gradient-shift"></div>
       </div>
-      {/* Header */}
       <header
         className={`relative z-40 px-8 py-6 transition-all duration-1000 ${
           isVisible ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
@@ -121,15 +118,15 @@ const LandingPage = () => {
               </a>
             ))}
           </div>
-          <div className="text-center hidden md:block">
-            <div className="text-sm font-bold text-purple-300">
-              CyberHackathon 2025
-            </div>
-            <div className="text-xs text-gray-400">Secure the Future</div>
+          <div className="flex-col items-center hidden md:flex">
+            <img
+              src="https://cyberhackathon.bihar.gov.in/logo-cyber-hackathon-2025.png"
+              alt="InviScan Logo"
+              className="w-20 h-20"
+            />
           </div>
         </nav>
       </header>
-      {/* Home Section */}
       <section
         id="home"
         className="relative z-30 px-8 py-20 min-h-screen flex items-center"
@@ -147,7 +144,7 @@ const LandingPage = () => {
                 Secure Your Web App with
                 <br />
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient-shift">
-                  AI-Powered Scanning
+                  Scanning
                 </span>
               </h1>
               <div className="absolute -top-4 -right-4 text-2xl animate-bounce">
@@ -195,7 +192,7 @@ const LandingPage = () => {
               </span>
             </h2>
             <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Revolutionary AI-powered platform that transforms how you approach
+              Revolutionary platform that transforms how you approach
               cybersecurity
             </p>
 
@@ -259,29 +256,6 @@ const LandingPage = () => {
                     <p className="text-lg text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
                       {feature.details}
                     </p>
-
-                    {/* Action Button */}
-                    <div className="pt-4">
-                      <button className="group/btn relative bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/50 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover/btn:translate-x-[200%] transition-transform duration-1000"></div>
-                        <span className="relative flex items-center">
-                          Learn More
-                          <svg
-                            className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
                   </div>
 
                   {/* Enhanced Feature Visualization */}
@@ -562,7 +536,7 @@ const LandingPage = () => {
                     </h3>
                   </div>
                   <p className="text-lg text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-500">
-                    To democratize cybersecurity by making advanced AI-powered
+                    To democratize cybersecurity by making advanced
                     vulnerability detection and automated patching accessible to
                     every organization, regardless of size or technical
                     expertise.
@@ -763,7 +737,7 @@ const LandingPage = () => {
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
-                    title: "AI-Powered Detection",
+                    title: "  Detection",
                     description:
                       "Advanced machine learning algorithms detect vulnerabilities with 99.9% accuracy",
                     icon: "🧠",
@@ -992,7 +966,7 @@ const LandingPage = () => {
                 size="w-8 h-8"
                 textSize="text-lg"
                 textColor="text-white"
-                subtitle="AI-Powered Security"
+                subtitle="  Security"
               />
               {/* Center: Navigation Links */}
               <div className="flex items-center space-x-8 text-sm">
