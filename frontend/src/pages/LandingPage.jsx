@@ -28,15 +28,15 @@ const LandingPage = () => {
       stats: "Scanner",
       details: "Detect known & unknown threats with real-time scanning",
     },
-    {
-      icon: CpuChipIcon,
-      title: "AI Threat Detection",
-      description: "Machine learning classifies and prioritizes threats",
-      gradient: "from-blue-500 to-purple-500",
-      stats: "Real-time Analysis",
-      details:
-        "Continuous learning system with misconfiguration detection and behavioral analysis",
-    },
+    // {
+    //   icon: CpuChipIcon,
+    //   title: "AI Threat Detection",
+    //   description: "Machine learning classifies and prioritizes threats",
+    //   gradient: "from-blue-500 to-purple-500",
+    //   stats: "Real-time Analysis",
+    //   details:
+    //     "Continuous learning system with misconfiguration detection and behavioral analysis",
+    // },
     {
       icon: WrenchScrewdriverIcon,
       title: "Auto Patching",
@@ -289,7 +289,7 @@ const LandingPage = () => {
                           </div>
 
                           {/* Feature Metrics */}
-                          <div className="grid grid-cols-2 gap-6 text-center">
+                          {/* <div className="grid grid-cols-2 gap-6 text-center">
                             <div className="bg-purple-500/10 rounded-2xl p-4 border border-purple-500/20">
                               <div className="text-2xl font-bold text-white mb-1">
                                 99.9%
@@ -306,7 +306,7 @@ const LandingPage = () => {
                                 Response
                               </div>
                             </div>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
@@ -955,41 +955,12 @@ const LandingPage = () => {
           </div>
         </div>{" "}
       </section>{" "}
-      {/* Footer - Minimal Design */}
+      {/* Footer */}
       <footer className="relative z-30 px-8 py-12 bg-gradient-to-t from-black via-gray-900/95 to-transparent">
         <div className="max-w-6xl mx-auto">
-          {/* Simplified Footer Content */}{" "}
           <div className="mt-8 pt-6 border-t border-gray-800/50">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              {/* Left: Brand Info */}{" "}
-              <Logo
-                size="w-8 h-8"
-                textSize="text-lg"
-                textColor="text-white"
-                subtitle="  Security"
-              />
-              {/* Center: Navigation Links */}
-              <div className="flex items-center space-x-8 text-sm">
-                <a
-                  href="#about"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
-                >
-                  About
-                </a>
-                <a
-                  href="#contact"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
-                >
-                  Contact
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
-                >
-                  Privacy
-                </a>
-              </div>
-              {/* Right: Copyright */}
+            <div className="flex flex-row justify-center items-center space-x-4 text-gray-400">
+              <Logo size="w-8 h-8" textSize="text-lg" textColor="text-white" />
               <div className="text-sm text-gray-400">© 2025 InviScan AI</div>
             </div>
           </div>

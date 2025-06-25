@@ -7,7 +7,7 @@ const Logo = ({
   textSize = "text-xl",
   textColor = "text-white",
   variant = "normal",
-  subtitle = "Security Scanner",
+  // subtitle = "Security Scanner",
 }) => {
   const logoSrc =
     variant === "large" ? "/inviscan-logo-large.svg" : "/inviscan-logo.svg";
@@ -15,12 +15,12 @@ const Logo = ({
   return (
     <div className={`flex items-center space-x-3 ${className}`}>
       <div className="flex items-center justify-center">
-        <img src={logoSrc} alt="InviScan AI" className={size} />
+        <img src={logoSrc} alt="" className={size} />
       </div>
       {showText && (
         <div>
           <h1 className={`${textSize} font-bold ${textColor}`}>InviScan</h1>
-          <p className="text-xs text-purple-300">{subtitle}</p>
+          {/* <p className="text-xs text-purple-300">{subtitle}</p> */}
         </div>
       )}
     </div>
